@@ -8,6 +8,7 @@ class Source < Item
     @id = Random.rand(1..100)
     @name = name
     @items = []
+    super()
   end
 
   def add_source(item)
