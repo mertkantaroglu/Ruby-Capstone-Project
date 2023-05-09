@@ -91,6 +91,13 @@ Clone this repository to your desired folder:
 - Twitter: [@aranelluinwe](https://twitter.com/aranelluinwe)
 - LinkedIn: [mertkantaroglu](https://www.linkedin.com/in/mert-kantaroglu/)
 
+### 👤 **Mert Kantaroglu**
+
+- GitHub: [@Nezerwa](https://github.com/nezerwa/)
+- Twitter: [@eligrand](https://twitter.com/eligrand1)
+- LinkedIn: [eligrand-nezerwa](https://www.linkedin.com/in/eligrand-nezerwa/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
