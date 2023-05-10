@@ -1,5 +1,5 @@
-require './music/genre.rb'
-require './music/music_album.rb'
+require './music/genre'
+require './music/music_album'
 
 describe 'genre' do
   before(:each) do

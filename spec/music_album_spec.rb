@@ -1,4 +1,4 @@
-require './music/music_album.rb'
+require './music/music_album'
 
 describe 'MusicAlbum' do
   before(:each) do
