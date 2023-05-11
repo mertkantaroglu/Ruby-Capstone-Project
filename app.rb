@@ -6,7 +6,6 @@ require_relative 'modules/movie_storage'
 require_relative 'music/music_album'
 require_relative 'music/genre'
 
-
 class App
   include MovieModule
 
