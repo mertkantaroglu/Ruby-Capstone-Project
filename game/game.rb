@@ -1,10 +1,10 @@
-require_relative 'item'
+require './item'
 
 class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
   def initialize(multiplayer, last_played_at, publish_date)
-    super(publish_date)
+    super(nil, nil, nil, nil, publish_date)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
   end
