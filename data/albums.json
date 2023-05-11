@@ -1,0 +1,20 @@
+[
+  {
+    "Title": "a",
+    "Publish_date": "a",
+    "Is on spotify?": true,
+    "Genre": "b"
+  },
+  {
+    "Title": "Test",
+    "Publish_date": "1",
+    "Is on spotify?": true,
+    "Genre": "test"
+  },
+  {
+    "Title": "First",
+    "Publish_date": "2",
+    "Is on spotify?": true,
+    "Genre": "Wow"
+  }
+]
