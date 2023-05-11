@@ -4,7 +4,7 @@ module SaveData
   def save_movie(movies)
     save_movie = []
     movies.each do |movie|
-      save_movie << { 'silent' => movie.silent, 'publish_date' => movie.publish_date }
+      save_movie << { 'name' => movie.name, 'silent' => movie.silent, 'publish_date' => movie.publish_date }
     end
 
     File.write('./data/movies.json', JSON.generate(save_movie))
@@ -25,8 +25,8 @@ module LoadData
     if File.exist?('./data/movies.json')
       movies_json = File.read('./data/movies.json')
       movies_hash = JSON.parse(movies_json)
-      movies_hash.map do |movies_hash|
-        Movie.new(movie_hash['silent'], movie_hash['publish_date'])
+      movies_hash.map do |movie_hash|
+        Movie.new(movie_hash['name'], movie_hash['silent'], movie_hash['publish_date'])
       end
     else
       []
