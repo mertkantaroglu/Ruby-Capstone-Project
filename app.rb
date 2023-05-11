@@ -29,26 +29,36 @@ class App
     on_spotify = true if %w[Y y].include?(answer)
     on_spotify = false if %w[N n].include?(answer)
     puts 'New Music Album created! '
-  
-    album = MusicAlbum.new(name: name, on_spotify: on_spotify, publish_date: date)
+    album = MusicAlbum.new(
+      name: name,
+      on_spotify: on_spotify,
+      publish_date: date
+    )
     genre = Genre.new(genre_name)
     genre.add_item(album)
-  
-    @albums.push({ 'Title' => album.name, 'Publish_date' => album.publish_date, 'Is on spotify?' => album.on_spotify,
-                   'Genre' => genre.name })
+    @albums.push({
+                   'Title' => album.name,
+                   'Publish_date' => album.publish_date,
+                   'Is on spotify?' => album.on_spotify,
+                   'Genre' => genre.name
+                 })
     @genres.push({ 'Genre' => genre.name })
   end
-  
+
   def list_music_albums
     if @albums.empty?
       puts 'Please a music album'
     else
       @albums.each do |album|
-        puts "Title: #{album['Title']}, Publish_date: #{album['Publish_date']}, Is on spotify?: #{album['Is on spotify?']}"
+        puts "
+          Title: #{album['Title']},
+          Publish_date: #{album['Publish_date']},
+           Is on spotify?: #{album['Is on spotify?
+        ']}"
       end
     end
   end
-  
+
   def list_genres
     if @genres.empty?
       puts 'Please a music album'
@@ -66,7 +76,7 @@ class App
     read_file = File.read(file)
     JSON.parse(read_file)
   end
-  
+
   def load_data
     @albums = File.exist?('./data/albums.json') ? read_file('./data/albums.json') : []
     @genres = File.exist?('./data/genre.json') ? read_file('./data/genres.json') : []
