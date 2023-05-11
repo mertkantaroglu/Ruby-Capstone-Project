@@ -1,7 +1,7 @@
 require 'json'
 
 module BookStorage
-  DATA_FOLDER = './data'
+  DATA_FOLDER = './data'.freeze
 
   def self.save_books(books)
     save_books = []
