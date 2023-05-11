@@ -8,8 +8,8 @@ class Label
     @items = []
   end
 
-  def add_item(item)
+  def add_label(item)
     @items << item unless @items.include?(item)
-    item.add_label = self unless item.add_label == self
+    item.label = self unless item.label == self
   end
 end
