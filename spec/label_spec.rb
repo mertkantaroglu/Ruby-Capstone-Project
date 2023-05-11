@@ -17,9 +17,13 @@ describe Label do
     expect(@label).to be_an_instance_of(Label)
   end
 
-  it 'should return true if the label has an item' do
-    @item = Item.new(nil, '2002-01-01')
-    @item.add_label(@label)
-    expect(@label.items.length).to eq 1
+  it 'sets the item label to the label object' do
+    label = Label.new(1, 'Label Title', 'Label Color')
+    item = Item.new(nil, nil, nil, 'book', '2022-01-01')
+
+    label.add_label(item)
+
+    expect(label.items).to include(item)
+    expect(item.label).to eq(label)
   end
 end
