@@ -30,32 +30,28 @@ module MovieModule
   end
 
   def movie_list
+    puts ''
     if @movie_list.empty?
-      puts ''
       puts 'There are no movies in the list'
-      puts ''
     else
-      puts ''
       puts 'Movie List:'
       @movie_list.each_with_index do |movie, index|
         puts "#{index} - Name: #{movie.name}, Publish Date: #{movie.publish_date}, Silent Movie: #{movie.silent}"
       end
-      puts ''
     end
+    puts ''
   end
 
   def source_list
+    puts ''
     if @source_list.empty?
-      puts ''
       puts 'There are no sources in the list'
-      puts ''
     else
-      puts ''
       puts 'Source List:'
       @source_list.each_with_index do |source, index|
         puts "#{index} - Source name: #{source.name.capitalize}"
       end
-      puts ''
     end
+    puts ''
   end
 end
