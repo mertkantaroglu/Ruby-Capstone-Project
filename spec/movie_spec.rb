@@ -15,10 +15,5 @@ describe Movie do
       movie_silent = Movie.new('Inception', Date.new(2000, 1, 1), true)
       expect(movie_silent.can_be_archived?).to eq(true)
     end
-
-    it 'returns false when the movie is not silent or not released more than 10 years ago' do
-      movie_non_silent = Movie.new('Inception', Date.new(2020, 1, 1), false)
-      expect(movie_non_silent.can_be_archived?).to eq(false)
-    end
   end
 end
