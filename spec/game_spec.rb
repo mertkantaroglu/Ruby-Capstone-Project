@@ -1,5 +1,7 @@
 require './game/game'
 require 'date'
+require 'time'
+
 RSpec.describe Game do
   subject(:game) { described_class.new(multiplayer, last_played_at, archived_at) }
   let(:multiplayer) { 3 }
@@ -18,22 +20,14 @@ RSpec.describe Game do
     end
   end
 
-  # describe '#can_be_archived?' do
-  #   it 'returns true' do
-  #     expect(game.send(:can_be_archived?)).to be_truthy
-  #   end
-  # end
+  describe '#can_be_archived?' do
+    it 'returns false when the game cannot be archived' do
+      last_played_at = Time.now - (1 * 365 * 24 * 60 * 60)
+      game = Game.new(true, last_played_at, Time.parse('2021-01-01'))
 
-    describe '#can_be_archived?' do
-      it 'returns true' do
-        date_string = '2012-04-03'
-        date_object = Date.parse(date_string)
-        year = date_object.year
-  
-        game = Game.new(true, Date.new(2000, 1, 1), Date.new(2000, 1, 1))
-        expect(game.send(:can_be_archived?)).to be_truthy
-      end
+      expect(game.can_be_archived?).to eq(false)
     end
+  end
 
   it 'is an instance of Game class' do
     expect(game).to be_instance_of(Game)

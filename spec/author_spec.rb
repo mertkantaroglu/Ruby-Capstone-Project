@@ -1,6 +1,6 @@
 require './game/author'
 require_relative '../item'
-require'./book/book'
+require './book/book'
 
 RSpec.describe Author do
   subject(:author) { described_class.new(1, 'Lugard', 'Agu') }
