@@ -2,6 +2,9 @@ require_relative 'movie/movie'
 require_relative 'movie/source'
 require_relative 'modules/movie_module'
 require_relative 'modules/movie_storage'
+require_relative 'modules/book_module'
+require_relative 'modules/book_storage'
+
 
 class App
   include MovieModule
