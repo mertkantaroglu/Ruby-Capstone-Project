@@ -1,20 +1,29 @@
+require 'json'
+
 require_relative 'movie/movie'
 require_relative 'movie/source'
 require_relative 'modules/movie_module'
 require_relative 'modules/movie_storage'
+
 require_relative 'modules/book_module'
 require_relative 'modules/book_storage'
 require_relative 'Book/book'
 require_relative 'Book/label'
 
+require_relative 'music/music_album'
+require_relative 'music/genre'
+
 class App
   include MovieModule
   include BookLabelModule
+
   def initialize
     @movie_list = load_movies
     @source_list = load_sources
     @book_list = load_books
     @label_list = load_labels
+    @albums = []
+    @genres = []
   end
 
   def run
@@ -52,6 +61,41 @@ class App
     method_name = OPTIONS[option]
     send(method_name) if method_name
     puts 'Invalid option, please type correct number!' unless method_name
+
+  def list_music_albums
+    if @albums.empty?
+      puts 'Please add a music album'
+    else
+      @albums.each do |album|
+        puts "
+          Title: #{album['Title']},
+          Publish_date: #{album['Publish_date']},
+          Is on spotify?: #{album['Is on spotify?']}"
+      end
+    end
+  end
+
+  def list_genres
+    if @genres.empty?
+      puts 'Please add a music album'
+    else
+      @genres.each { |genre| puts "Genre: \"#{genre['Genre']}\"" }
+    end
+  end
+
+  def save_data
+    File.write('./data/albums.json', JSON.pretty_generate(@albums))
+    File.write('./data/genres.json', JSON.pretty_generate(@genres))
+  end
+
+  def read_file(file)
+    read_file = File.read(file)
+    JSON.parse(read_file)
+  end
+
+  def load_data
+    @albums = File.exist?('./data/albums.json') ? read_file('./data/albums.json') : []
+    @genres = File.exist?('./data/genres.json') ? read_file('./data/genres.json') : []
   end
 
   def add_movie
