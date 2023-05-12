@@ -12,4 +12,4 @@ class Book < Item
     super || @cover_state == 'bad'
   end
   private :can_be_archived?
-end
+end 
