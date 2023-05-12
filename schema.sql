@@ -23,8 +23,23 @@ CREATE TABLE movie (
   source_id INT REFERENCES Source(id)
 );
 
+-- Create Music Table
+CREATE TABLE music_albums (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(50),
+    on_spotify BOOLEAN,
+    publish_date DATE,
+    genre_id INT REFERENCES Genre(id),
+);
+
 -- Create Source Table
 CREATE TABLE source (
   id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   name VARCHAR(55)
+);
+
+-- Create Genre Table
+CREATE TABLE genre (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(55)
 );
