@@ -13,13 +13,13 @@
   },
   {
     "name": "Hound of The Baskervilles",
-    "publisher": "MMB",
+    "publisher": "jyakie",
     "publish_date": "192*",
     "cover_state": "Bad"
   },
   {
     "name": "War and Peace",
-    "publisher": "Burki",
+    "publisher": "james",
     "publish_date": "1995-01-01",
     "cover_state": "Good"
   },
@@ -30,8 +30,8 @@
     "cover_state": "Good"
   },
   {
-    "name": "Book",
-    "publisher": "Burak",
+    "name": "Eligrand",
+    "publisher": "Eligrand",
     "publish_date": "1990-10-10",
     "cover_state": "Good"
   }
