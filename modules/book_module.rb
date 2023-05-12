@@ -24,6 +24,7 @@ module BookLabelModule
     @label_list << label
     save_label(@label_list)
   end
+
   def book_list
     if @book_list.empty?
       puts "There are no books in the list.\n"
@@ -34,6 +35,7 @@ module BookLabelModule
       end
     end
   end
+
   def label_list
     if @label_list.empty?
       puts "There are no labels in the list.\n"
