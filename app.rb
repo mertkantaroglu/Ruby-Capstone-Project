@@ -46,21 +46,20 @@ class App
 
   def list_music_albums
     if @albums.empty?
-      puts 'Please a music album'
+      puts 'Please add a music album'
     else
       @albums.each do |album|
         puts "
           Title: #{album['Title']},
           Publish_date: #{album['Publish_date']},
-           Is on spotify?: #{album['Is on spotify?
-        ']}"
+          Is on spotify?: #{album['Is on spotify?']}"
       end
     end
   end
 
   def list_genres
     if @genres.empty?
-      puts 'Please a music album'
+      puts 'Please add a music album'
     else
       @genres.each { |genre| puts "Genre: \"#{genre['Genre']}\"" }
     end

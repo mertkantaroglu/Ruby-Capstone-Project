@@ -16,5 +16,11 @@
     "Publish_date": "2",
     "Is on spotify?": true,
     "Genre": "Wow"
+  },
+  {
+    "Title": "Go",
+    "Publish_date": "2023",
+    "Is on spotify?": true,
+    "Genre": "Pop"
   }
 ]
