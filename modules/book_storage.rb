@@ -2,7 +2,7 @@ require 'json'
 
 module SaveBookData
   def save_book(books)
-    save_data(books) do |book|
+    save_book = books.map do |book|
       {
         'name' => book.name,
         'publisher' => book.publisher,
@@ -10,58 +10,47 @@ module SaveBookData
         'cover_state' => book.cover_state
       }
     end
+
+    File.write('./data/books.json', JSON.generate(save_book))
   end
 
   def save_label(labels)
-    save_data(labels) do |label|
+    save_label = labels.map do |label|
       {
         'title' => label.title,
         'color' => label.color
       }
     end
-  end
 
-  private
-
-  def save_data(data, &block)
-    save_data = data.map(&block)
-    write_to_file(save_data)
-  end
-
-  def write_to_file(data)
-    File.write(file_path, JSON.generate(data))
-  end
-
-  def file_path
-    './data/books.json'
+    File.write('./data/labels.json', JSON.generate(save_label))
   end
 end
 
 module LoadBookData
   def load_books
-    load_data('./data/books.json') do |book_hash|
-      Book.new(
-        book_hash['name'],
-        book_hash['publisher'],
-        book_hash['publish_date'],
-        book_hash['cover_state']
-      )
+    if File.exist?('./data/books.json')
+      books_json = File.read('./data/books.json')
+      books_hash = JSON.parse(books_json)
+      books_hash.map do |book_hash|
+        Book.new(
+          book_hash['name'],
+          book_hash['publisher'],
+          book_hash['publish_date'],
+          book_hash['cover_state']
+        )
+      end
+    else
+      []
     end
   end
 
   def load_labels
-    load_data('./data/labels.json') do |label_hash|
-      Label.new(label_hash['title'], label_hash['color'])
-    end
-  end
-
-  private
-
-  def load_data(file_path, &block)
-    if File.exist?(file_path)
-      json_data = File.read(file_path)
-      data_hash = JSON.parse(json_data)
-      data_hash.map(&block)
+    if File.exist?('./data/labels.json')
+      labels_json = File.read('./data/labels.json')
+      labels_hash = JSON.parse(labels_json)
+      labels_hash.map do |label_hash|
+        Label.new(label_hash['title'], label_hash['color'])
+      end
     else
       []
     end
