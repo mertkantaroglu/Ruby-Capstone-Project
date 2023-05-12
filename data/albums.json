@@ -22,5 +22,17 @@
     "Publish_date": "2023",
     "Is on spotify?": true,
     "Genre": "Pop"
+  },
+  {
+    "Title": "Hello",
+    "Publish_date": "2000",
+    "Is on spotify?": false,
+    "Genre": "Pop"
+  },
+  {
+    "Title": "Test Genre",
+    "Publish_date": "5",
+    "Is on spotify?": false,
+    "Genre": "Rock"
   }
 ]

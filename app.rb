@@ -28,11 +28,7 @@ class App
     on_spotify = true if %w[Y y].include?(answer)
     on_spotify = false if %w[N n].include?(answer)
     puts 'New Music Album created! '
-    album = MusicAlbum.new(
-      name: name,
-      on_spotify: on_spotify,
-      publish_date: date
-    )
+    album = MusicAlbum.new(name: name, on_spotify: on_spotify, publish_date: date)
     genre = Genre.new(genre_name)
     genre.add_item(album)
     @albums.push({
@@ -77,7 +73,7 @@ class App
 
   def load_data
     @albums = File.exist?('./data/albums.json') ? read_file('./data/albums.json') : []
-    @genres = File.exist?('./data/genre.json') ? read_file('./data/genres.json') : []
+    @genres = File.exist?('./data/genres.json') ? read_file('./data/genres.json') : []
   end
 
   def add_movie
