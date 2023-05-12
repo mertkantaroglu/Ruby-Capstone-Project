@@ -23,8 +23,8 @@ module SaveBookData
 
   private
 
-  def save_data(data)
-    save_data = data.map { |item| yield(item) }
+  def save_data(data, &block)
+    save_data = data.map(&block)
     write_to_file(save_data)
   end
 
@@ -57,11 +57,11 @@ module LoadBookData
 
   private
 
-  def load_data(file_path)
+  def load_data(file_path, &block)
     if File.exist?(file_path)
       json_data = File.read(file_path)
       data_hash = JSON.parse(json_data)
-      data_hash.map { |item| yield(item) }
+      data_hash.map(&block)
     else
       []
     end
