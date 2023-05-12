@@ -3,12 +3,20 @@ require_relative 'movie/source'
 require_relative 'modules/movie_module'
 require_relative 'modules/movie_storage'
 
+require_relative 'game/game'
+require_relative 'game/author'
+require_relative 'modules/game_module'
+require_relative 'modules/game_storage'
+
 class App
   include MovieModule
+  include GameModule
 
   def initialize
     @movie_list = load_movies
     @source_list = load_sources
+    @game_list = load_games
+    @author_list = load_authors
   end
 
   def run
@@ -60,5 +68,17 @@ class App
 
   def list_sources
     source_list
+  end
+
+  def add_game
+    create_game
+  end
+
+  def list_games
+    game_list
+  end
+
+  def list_authors
+    @author_list
   end
 end
