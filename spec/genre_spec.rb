@@ -11,7 +11,7 @@ describe 'genre' do
       expect(@genre).to be_an_instance_of(Genre)
     end
     it 'should return the length of items' do
-      album = MusicAlbum.new(on_spotify: true, can_be_archived: true)
+      album = MusicAlbum.new(name: 'Ahmad', on_spotify: true, publish_date: 2022)
       @genre.add_item(album)
       expect(@genre.items.length).to eql 1
     end

@@ -1,16 +1,18 @@
 require './item'
 
 class MusicAlbum < Item
-  attr_accessor :on_spotify
-  attr_reader :can_be_archived
+  attr_accessor :on_spotify, :name
 
-  def initialize(on_spotify:, can_be_archived:)
-    super(nil, nil, nil, nil, on_spotify)
+  def initialize(name:, on_spotify:, publish_date:)
+    super(nil, nil, nil, nil, publish_date)
     @on_spotify = on_spotify
-    @can_be_archived = can_be_archived
+    @name = name
   end
 
-  private
+  def add_genre=(genre)
+    @genre = genre
+    genre.items << self unless genre.items.include?(self)
+  end
 
   def can_be_archived?
     super && @on_spotify
