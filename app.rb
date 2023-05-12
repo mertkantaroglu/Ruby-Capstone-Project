@@ -4,14 +4,17 @@ require_relative 'modules/movie_module'
 require_relative 'modules/movie_storage'
 require_relative 'modules/book_module'
 require_relative 'modules/book_storage'
-
+require_relative 'Book/book'
+require_relative 'Book/label'
 
 class App
   include MovieModule
-
+  include BookLabelModule
   def initialize
     @movie_list = load_movies
     @source_list = load_sources
+    @book_list = load_books
+    @label_list = load_labels
   end
 
   def run
@@ -30,7 +33,6 @@ class App
     puts '12 - Add a movie'
     puts '0 - Exit'
   end
-
   OPTIONS = {
     1 => :list_books,
     2 => :list_music_albums,
@@ -46,7 +48,6 @@ class App
     12 => :add_movie,
     0 => :exit
   }.freeze
-
   def option(option)
     method_name = OPTIONS[option]
     send(method_name) if method_name
@@ -63,5 +64,17 @@ class App
 
   def list_sources
     source_list
+  end
+
+  def add_book
+    create_book
+  end
+
+  def list_books
+    book_list
+  end
+
+  def list_labels
+    label_list
   end
 end
