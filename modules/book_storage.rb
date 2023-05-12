@@ -1,62 +1,57 @@
 require 'json'
-
-module BookStorage
-  DATA_FOLDER = './data'.freeze
-
-  def self.save_books(books)
-    save_books = []
-    books.each do |book|
-      save_books << {
-        'id' => book.id,
+module SaveBookData
+  def save_book(books)
+    save_data(books) do |book|
+      {
         'name' => book.name,
         'publisher' => book.publisher,
         'publish_date' => book.publish_date,
-        'cover_state' => book.cover_state,
-        'label_ids' => book.label_ids
+        'cover_state' => book.cover_state
       }
     end
-
-    File.write("#{DATA_FOLDER}/books.json", JSON.generate(save_books))
   end
-
-  def self.save_labels(labels)
-    save_labels = []
-    labels.each do |label|
-      save_labels << {
-        'id' => label.id,
+  def save_label(labels)
+    save_data(labels) do |label|
+      {
         'title' => label.title,
-        'color' => label.color,
-        'item_ids' => label.item_ids
+        'color' => label.color
       }
     end
-
-    File.write("#{DATA_FOLDER}/labels.json", JSON.generate(save_labels))
   end
-
-  def self.load_books
-    if File.exist?("#{DATA_FOLDER}/books.json")
-      books_json = File.read("#{DATA_FOLDER}/books.json")
-      books_hash = JSON.parse(books_json)
-      books_hash.map do |book_hash|
-        Book.new(
-          book_hash['id'], book_hash['name'], book_hash['publisher'],
-          book_hash['publish_date'], book_hash['cover_state'], book_hash['label_ids']
-        )
-      end
-    else
-      []
+  private
+  def save_data(data)
+    save_data = data.map { |item| yield(item) }
+    write_to_file(save_data)
+  end
+  def write_to_file(data)
+    File.write(file_path, JSON.generate(data))
+  end
+  def file_path
+    ‘./data/books.json’
+  end
+end
+module LoadBookData
+  def load_books
+    load_data('./data/books.json') do |book_hash|
+      Book.new(
+        book_hash['name'],
+        book_hash['publisher'],
+        book_hash['publish_date'],
+        book_hash['cover_state']
+      )
     end
   end
-
-  def self.load_labels
-    if File.exist?("#{DATA_FOLDER}/labels.json")
-      labels_json = File.read("#{DATA_FOLDER}/labels.json")
-      labels_hash = JSON.parse(labels_json)
-      labels_hash.map do |label_hash|
-        Label.new(
-          label_hash['id'], label_hash['title'], label_hash['color'], label_hash['item_ids']
-        )
-      end
+  def load_labels
+    load_data('./data/labels.json') do |label_hash|
+      Label.new(label_hash['title'], label_hash['color'])
+    end
+  end
+  private
+  def load_data(file_path)
+    if File.exist?(file_path)
+      json_data = File.read(file_path)
+      data_hash = JSON.parse(json_data)
+      data_hash.map { |item| yield(item) }
     else
       []
     end
