@@ -34,5 +34,11 @@
     "Publish_date": "5",
     "Is on spotify?": false,
     "Genre": "Rock"
+  },
+  {
+    "Title": "Hip",
+    "Publish_date": "10",
+    "Is on spotify?": true,
+    "Genre": "Hop"
   }
 ]

@@ -13,8 +13,14 @@ require_relative 'Book/label'
 require_relative 'music/music_album'
 require_relative 'music/genre'
 
+require_relative 'game/game'
+require_relative 'game/author'
+require_relative 'modules/game_module'
+require_relative 'modules/game_storage'
+
 class App
   include MovieModule
+  include GameModule
   include BookLabelModule
 
   def initialize
@@ -22,6 +28,8 @@ class App
     @source_list = load_sources
     @book_list = load_books
     @label_list = load_labels
+    @game_list = load_games
+    @author_list = load_authors
     @albums = []
     @genres = []
   end
@@ -41,7 +49,9 @@ class App
     album = MusicAlbum.new(name: name, on_spotify: on_spotify, publish_date: date)
     genre = Genre.new(genre_name)
     genre.add_item(album)
-    @albums.push({ 'Title' => album.name, 'Publish_date' => album.publish_date, 'Is on spotify?' => album.on_spotify,
+    @albums.push({ 'Title' => album.name,
+                   'Publish_date' => album.publish_date,
+                   'Is on spotify?' => album.on_spotify,
                    'Genre' => genre.name })
     @genres.push({ 'Genre' => genre.name })
   end
@@ -92,6 +102,18 @@ class App
 
   def list_sources
     source_list
+  end
+
+  def add_game
+    create_game
+  end
+
+  def list_games
+    game_list
+  end
+
+  def list_authors
+    author_list
   end
 
   def add_book
