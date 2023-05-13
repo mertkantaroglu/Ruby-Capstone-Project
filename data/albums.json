@@ -1,0 +1,50 @@
+[
+  {
+    "Title": "a",
+    "Publish_date": "a",
+    "Is on spotify?": true,
+    "Genre": "b"
+  },
+  {
+    "Title": "Test",
+    "Publish_date": "1",
+    "Is on spotify?": true,
+    "Genre": "test"
+  },
+  {
+    "Title": "First",
+    "Publish_date": "2",
+    "Is on spotify?": true,
+    "Genre": "Wow"
+  },
+  {
+    "Title": "Go",
+    "Publish_date": "2023",
+    "Is on spotify?": true,
+    "Genre": "Pop"
+  },
+  {
+    "Title": "Hello",
+    "Publish_date": "2000",
+    "Is on spotify?": false,
+    "Genre": "Pop"
+  },
+  {
+    "Title": "Test Genre",
+    "Publish_date": "5",
+    "Is on spotify?": false,
+    "Genre": "Rock"
+  },
+  {
+    "Title": "Hip",
+    "Publish_date": "10",
+    "Is on spotify?": true,
+    "Genre": "Hop"
+  },
+  {
+    "Title": "r",
+    "Publish_date": "5",
+    "Is on spotify?": false,
+    "Genre": "y"
+  }
+]
