@@ -49,7 +49,9 @@ class App
     album = MusicAlbum.new(name: name, on_spotify: on_spotify, publish_date: date)
     genre = Genre.new(genre_name)
     genre.add_item(album)
-    @albums.push({ 'Title' => album.name, 'Publish_date' => album.publish_date, 'Is on spotify?' => album.on_spotify,
+    @albums.push({ 'Title' => album.name,
+                   'Publish_date' => album.publish_date,
+                   'Is on spotify?' => album.on_spotify,
                    'Genre' => genre.name })
     @genres.push({ 'Genre' => genre.name })
   end
