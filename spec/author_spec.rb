@@ -3,7 +3,7 @@ require_relative '../item'
 require './book/book'
 
 RSpec.describe Author do
-  subject(:author) { described_class.new(1, 'Lugard', 'Agu') }
+  subject(:author) { described_class.new('Lugard', 'Agu') }
 
   it 'returns the correct value for the first_name attribute' do
     expect(author.first_name).to eq('Lugard')
@@ -21,7 +21,7 @@ end
 RSpec.describe Item do
   subject(:item) { described_class.new(nil, nil, nil, nil, '2010-01-01') }
 
-  let(:author) { Author.new(2, 'Lugard', 'Agu') }
+  let(:author) { Author.new('Lugard', 'Agu') }
   let(:book) { Book.new(nil, '2010-01-01', 'publisher', true) }
 
   it 'is an instance of Item class' do
