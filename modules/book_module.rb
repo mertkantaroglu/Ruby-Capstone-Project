@@ -1,5 +1,5 @@
-require_relative '../book/book'
-require_relative '../book/label'
+require_relative '../Book/book'
+require_relative '../Book/label'
 require_relative './book_storage'
 
 module BookLabelModule
