@@ -9,7 +9,7 @@ module SaveData
         'multiplayer' => game.multiplayer
       }
     end
-    File.write('./data / games.json', JSON.generate(save_game_data))
+    File.write('./data/games.json', JSON.generate(save_game_data))
   end
 
   def save_author(authors)
@@ -19,13 +19,13 @@ module SaveData
         'last_name' => author.last_name
       }
     end
-    File.write('./data / authors.json', JSON.generate(save_author_data))
+    File.write('./data/authors.json', JSON.generate(save_author_data))
   end
 end
 
 module LoadData
   def load_games
-    games_data = load_data_from_json_file('./data / games.json')
+    games_data = load_data_from_json_file('./data/games.json')
     games_data.map do |game_data|
       Game.new(game_data['name'], game_data['last_played_at'], game_data['publish_date'],
                game_data['multiplayer'])
@@ -33,7 +33,7 @@ module LoadData
   end
 
   def load_authors
-    authors_data = load_data_from_json_file('./data / authors.json')
+    authors_data = load_data_from_json_file('./data/authors.json')
     authors_data.map do |author_data|
       Author.new(author_data['first_name'], author_data['last_name'])
     end
