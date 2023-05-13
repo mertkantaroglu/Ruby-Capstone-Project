@@ -11,6 +11,10 @@
     - [Install ](#install-)
     - [Usage ](#usage-)
   - [👥 Authors ](#authors)
+    - [👤 **Mert Kantaroglu**](#-mert-kantaroglu)
+    - [👤 **Sohail Batoor**](#-sohail-batoor)
+    - [👤 **Eligrand Nezerwa**](#-eligrand-nezerwa)
+    - [👤 **Lugard Agu**](#-lugard-agu)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -106,7 +110,7 @@ Clone this repository to your desired folder:
 - Twitter: [@eligrand](https://twitter.com/eligrand1)
 - LinkedIn: [eligrand-nezerwa](https://www.linkedin.com/in/eligrand-nezerwa/)
 
-### 👤 **Lugard**
+### 👤 **Lugard Agu**
 
 - GitHub: [@lugard1](https://github.com/lugard1)
 - Twitter: [@Dsn3kings](https://twitter.com/Dsn3kings)
