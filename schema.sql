@@ -23,6 +23,19 @@ CREATE TABLE movie (
   source_id INT REFERENCES Source(id)
 );
 
+-- Create Source Table
+CREATE TABLE source (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(55)
+);
+
+<<<<<<< HEAD
+-- Create labels table
+CREATE TABLE LABEL(
+  id INTEGER GENERATED ALWAYS AS INDENTITY PRIMARY KEY,
+  title VARCHAR(255),
+  color VARCHAR(255),
+=======
 -- Create Music Table
 CREATE TABLE music_albums (
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -32,14 +45,32 @@ CREATE TABLE music_albums (
     genre_id INT REFERENCES Genre(id),
 );
 
--- Create Source Table
-CREATE TABLE source (
-  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  name VARCHAR(55)
-);
-
 -- Create Genre Table
 CREATE TABLE genre (
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(55)
+>>>>>>> 726650fe4ad76434aec27f968d326491b5ee6113
+);
+
+-- Create books table
+CREATE TABLE BOOK(
+  id INTEGER GENERATED ALWAYS AS INDENTITY PRIMARY KEY,
+  publish_date DATE,
+  publisher VARCHAR(255),
+  cover_state VARCHAR(255),
+  genre_id INT,
+  author_id INT,
+  label_id INT,
+  CONSTRAINT fk_book_genre FOREIGN KEY (genre_id) REFERENCES GENRES(id),
+  CONSTRAINT fk_book_author FOREIGN KEY (author_id) REFERENCES AUTHORS(id),
+  CONSTRAINT fk_book_label FOREIGN KEY (label_id) REFERENCES LABELS(id),
+<<<<<<< HEAD
+=======
+
+  -- Create labels table
+CREATE TABLE LABEL(
+  id INTEGER GENERATED ALWAYS AS INDENTITY PRIMARY KEY,
+  title VARCHAR(255),
+  color VARCHAR(255),
+>>>>>>> 726650fe4ad76434aec27f968d326491b5ee6113
 );

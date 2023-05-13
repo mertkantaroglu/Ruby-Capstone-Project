@@ -1,7 +1,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 School Library App ](#-school-library-app-)
+- [📖 Ruby Capstone Project ](#-Ruby-Capstone-Project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -10,8 +10,7 @@
     - [Setup ](#setup-)
     - [Install ](#install-)
     - [Usage ](#usage-)
-  - [👥 Authors ](#-authors-)
-    - [👤 **Mert Kantaroglu**](#-mert-kantaroglu)
+  - [👥 Authors ](#authors)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -20,9 +19,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 School Library App <a name="about-project"></a>
+# 📖 Ruby Capstone Project <a name="about-project"></a>
 
-**School Library App** is an app designed with Ruby where you can add teachers, students, books and see books' borrowing records.
+**Ruby Capstone Project** is an console app designed with Ruby where you can add a music album, movie, books, and games borrowing records.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -39,6 +38,10 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **User can add a music album**
+- **User can add a movie**
+- **User can add a book**
+- **User can add a game**
 - **Library Record Keeping**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -69,14 +72,14 @@ Clone this repository to your desired folder:
 ### Install <a name="install"></a>
 
 ```sh
-  cd School-Library-App
+  cd Ruby-Capstone-Project
   bundle install
 ```
 
 ### Usage <a name="usage"></a>
 
 ```sh
-  ruby person.rb
+  ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -91,11 +94,23 @@ Clone this repository to your desired folder:
 - Twitter: [@aranelluinwe](https://twitter.com/aranelluinwe)
 - LinkedIn: [mertkantaroglu](https://www.linkedin.com/in/mert-kantaroglu/)
 
-### 👤 **Mert Kantaroglu**
+### 👤 **Sohail Batoor**
+
+- GitHub: [@batoorsohail](https://github.com/batoorsohail)
+- Twitter: [@twitter](https://twitter.com/sohailBatoor)
+- LinkedIn: [@sohailbatoor](https://www.linkedin.com/in/sohail-batoor-52429b230/)
+
+### 👤 **Eligrand Nezerwa**
 
 - GitHub: [@Nezerwa](https://github.com/nezerwa/)
 - Twitter: [@eligrand](https://twitter.com/eligrand1)
 - LinkedIn: [eligrand-nezerwa](https://www.linkedin.com/in/eligrand-nezerwa/)
+
+### 👤 **Lugard**
+
+- GitHub: [@lugard1](https://github.com/lugard1)
+- Twitter: [@Dsn3kings](https://twitter.com/Dsn3kings)
+- LinkedIn: [@LugardAgu](https://www.linkedin.com/in/lugardagu)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
