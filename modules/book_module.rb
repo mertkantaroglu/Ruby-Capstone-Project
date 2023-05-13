@@ -40,11 +40,10 @@ module BookLabelModule
     else
       puts "\nBook List:\n"
       @book_list.each do |book|
-        puts "Name: #{book.name}\n
-        Publisher: #{book.publisher}\n
-        Cover State: #{book.cover_state}\n\n"
+        puts "Name: #{book.name}, Publisher: #{book.publisher}, Cover State: #{book.cover_state}\n"
       end
     end
+    puts
   end
 
   def label_list
@@ -53,8 +52,9 @@ module BookLabelModule
     else
       puts "\nLabel List:\n"
       @label_list.each do |label|
-        puts "Title: #{label.title}\nColor: #{label.color}\n\n"
+        puts "Title: #{label.title}, Color: #{label.color}\n"
       end
     end
+    puts
   end
 end

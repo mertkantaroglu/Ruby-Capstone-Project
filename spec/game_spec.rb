@@ -3,19 +3,20 @@ require 'date'
 require 'time'
 
 RSpec.describe Game do
-  subject(:game) { described_class.new(multiplayer, last_played_at, archived_at) }
-  let(:multiplayer) { 3 }
+  subject(:game) { described_class.new(name, last_played_at, publish_date, multiplayer) }
+  let(:name) { 'Lugard' }
   let(:last_played_at) { '2012-04-03' }
-  let(:archived_at) { '2012-04-03' }
+  let(:publish_date) { '2021-01-01' }
+  let(:multiplayer) { true }
 
   describe '#last_played_at' do
-    it 'returns the correct value' do
+    it 'returns the last played date' do
       expect(game.last_played_at).to eq(last_played_at)
     end
   end
 
   describe '#multiplayer' do
-    it 'returns the correct value' do
+    it 'returns the multiplayer status' do
       expect(game.multiplayer).to eq(multiplayer)
     end
   end
@@ -23,7 +24,7 @@ RSpec.describe Game do
   describe '#can_be_archived?' do
     it 'returns false when the game cannot be archived' do
       last_played_at = Time.now - (1 * 365 * 24 * 60 * 60)
-      game = Game.new(true, last_played_at, Time.parse('2021-01-01'))
+      game = Game.new('Lugard', true, last_played_at, Time.parse('2021-01-01'))
 
       expect(game.can_be_archived?).to eq(false)
     end

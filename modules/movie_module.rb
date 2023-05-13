@@ -36,8 +36,7 @@ module MovieModule
     else
       puts 'Movie List:'
       @movie_list.each_with_index do |movie, index|
-        puts "#{index} - Name: #{movie.name},
-              Publish Date: #{movie.publish_date}, Silent Movie: #{movie.silent}"
+        puts "#{index} - Name: #{movie.name}, Publish Date: #{movie.publish_date}, Silent Movie: #{movie.silent}"
       end
     end
     puts ''

@@ -3,7 +3,7 @@ require_relative '../item'
 
 describe Label do
   before :each do
-    @label = Label.new(nil, 'label', 'red')
+    @label = Label.new('label', 'red')
   end
 
   it 'has a title' do
@@ -18,7 +18,7 @@ describe Label do
   end
 
   it 'sets the item label to the label object' do
-    label = Label.new(1, 'Label Title', 'Label Color')
+    label = Label.new('Label Title', 'Label Color')
     item = Item.new(nil, nil, nil, 'book', '2022-01-01')
 
     label.add_label(item)

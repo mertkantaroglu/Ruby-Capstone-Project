@@ -8,7 +8,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 125
+  Max: 150
 Metrics/MethodLength:
   Max: 1000
 Metrics/AbcSize:
@@ -39,7 +39,7 @@ style/EndOfLine:
   Enabled: false
 
 Layout/LineLength:
-  Max: 100 
+  Max: 150
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
@@ -57,4 +57,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-  
