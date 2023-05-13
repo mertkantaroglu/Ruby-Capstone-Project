@@ -4,8 +4,7 @@ module SaveData
   def save_movie(movies)
     save_movie = []
     movies.each do |movie|
-      save_movie << { 'name' => movie.name, 'silent' => movie.silent,
-                      'publish_date' => movie.publish_date }
+      save_movie << { 'name' => movie.name, 'silent' => movie.silent, 'publish_date' => movie.publish_date }
     end
 
     File.write('./data/movies.json', JSON.generate(save_movie))

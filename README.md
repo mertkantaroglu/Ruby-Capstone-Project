@@ -1,7 +1,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Ruby Capstone Project ](#-Ruby-Capstone-Project-)
+- [📖 Ruby Capstone Project ](#-ruby-capstone-project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -10,12 +10,12 @@
     - [Setup ](#setup-)
     - [Install ](#install-)
     - [Usage ](#usage-)
-  - [👥 Authors ](#authors)
+  - [👥 Authors ](#-authors-)
     - [👤 **Mert Kantaroglu**](#-mert-kantaroglu)
     - [👤 **Sohail Batoor**](#-sohail-batoor)
     - [👤 **Eligrand Nezerwa**](#-eligrand-nezerwa)
     - [👤 **Lugard Agu**](#-lugard-agu)
-  - [Presentaion Video] (#-presentaion-video-)
+  - [Presentation Video ](#presentation-video-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -124,7 +124,7 @@ Clone this repository to your desired folder:
 
 ## Presentation Video <a name="presentation-video"></a>
 
-[https://drive.google.com/file/d/1_N5aNhRouSH2mlSe4tI8_Oa8Q4yuVkmZ/view?usp=share_link](Video)
+[Video](https://drive.google.com/file/d/1_N5aNhRouSH2mlSe4tI8_Oa8Q4yuVkmZ/view?usp=share_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -27,8 +27,7 @@ module LoadData
   def load_games
     games_data = load_data_from_json_file('./data/games.json')
     games_data.map do |game_data|
-      Game.new(game_data['name'], game_data['last_played_at'], game_data['publish_date'],
-               game_data['multiplayer'])
+      Game.new(game_data['name'], game_data['last_played_at'], game_data['publish_date'], game_data['multiplayer'])
     end
   end
 
