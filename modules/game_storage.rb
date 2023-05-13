@@ -1,45 +1,50 @@
 require 'json'
-
 module SaveData
   def save_game(games)
-    save_game = []
-    games.each do |game|
-      save_game << { 'multiplayer' => game.multiplayer, 'last_played_at' => game.last_played_at, 'publish_date' => game.publish_date }
+    save_game_data = games.map do |game|
+      {
+        'name' => game.name,
+        'last_played_at' => game.last_played_at,
+        'publish_date' => game.publish_date,
+        'multiplayer' => game.multiplayer
+      }
     end
-
-    File.write('./data/games.json', JSON.generate(save_game))
+    File.write('./data / games.json', JSON.generate(save_game_data))
   end
 
   def save_author(authors)
-    save_author = []
-    authors.each do |author|
-      save_author << { 'name' => author.name }
+    save_author_data = authors.map do |author|
+      {
+        'first_name' => author.first_name,
+        'last_name' => author.last_name
+      }
     end
-
-    File.write('./data/authors.json', JSON.generate(save_author))
+    File.write('./data / authors.json', JSON.generate(save_author_data))
   end
 end
 
 module LoadData
   def load_games
-    if File.exist?('./data/games.json')
-      games_json = File.read('./data/games.json')
-      games_hash = JSON.parse(games_json)
-      games_hash.map do |game_hash|
-        Game.new(game_hash['multiplayer'], game_hash['last_played_at'], game_hash['publish_date'])
-      end
-    else
-      []
+    games_data = load_data_from_json_file('./data / games.json')
+    games_data.map do |game_data|
+      Game.new(game_data['name'], game_data['last_played_at'], game_data['publish_date'],
+               game_data['multiplayer'])
     end
   end
 
   def load_authors
-    if File.exist?('./data/authors.json')
-      authors_json = File.read('./data/authors.json')
-      authors_hash = JSON.parse(authors_json)
-      authors_hash.map do |author_hash|
-        Author.new(author_hash['id'], author_hash['first_name'], author_hash['last_name'])
-      end
+    authors_data = load_data_from_json_file('./data / authors.json')
+    authors_data.map do |author_data|
+      Author.new(author_data['first_name'], author_data['last_name'])
+    end
+  end
+
+  private
+
+  def load_data_from_json_file(file_path)
+    if File.exist?(file_path)
+      json_data = File.read(file_path)
+      JSON.parse(json_data)
     else
       []
     end
