@@ -70,7 +70,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd <desired-folder>
-  git clone https://github.com/mertkantaroglu/School-Library-App.git
+  git clone https://github.com/mertkantaroglu/Ruby-Capstone-Project.git
 ```
 
 ### Install <a name="install"></a>
@@ -149,7 +149,7 @@ If you like this project please give me a Star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank for Microverse to provide us learning materials, and my peers for helping me out to move forward.
+We would like to thank for Microverse to provide us learning materials, and our peers for helping us out to move forward.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
