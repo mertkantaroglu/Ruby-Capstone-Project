@@ -112,6 +112,7 @@ class App
 
   def list_authors
     author_list
+  end
 
   def add_book
     create_book
