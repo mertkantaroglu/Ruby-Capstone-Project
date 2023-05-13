@@ -1,4 +1,4 @@
-require './book/label'
+require './Book/label'
 require './item'
 
 describe Label do
